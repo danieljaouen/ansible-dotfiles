@@ -1,4 +1,4 @@
 # file: roles/dotfiles/tasks/main.yml
 
 ---
-- include: dan.yml
+- import_tasks: dan.yml
