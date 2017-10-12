@@ -9,7 +9,7 @@
 
 # repos ------------------------------------------------------------------- {{{
 - name: dan | hg clone dotfiles.dan.hg.repos
-  hg: repo={{ item.repo }} dest={{ item.dest }}
+  hg: repo={{ item.repo }} dest={{ item.dest }} executable={{ executables.hg }}
   with_items: '{{ dotfiles.dan.hg.repos }}'
 
 - name: dan | git clone dotfiles.dan.git.repos
