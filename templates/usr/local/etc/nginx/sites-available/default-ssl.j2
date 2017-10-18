@@ -1,0 +1,32 @@
+server {
+    listen       443;
+    server_name  danieljaouendevelopment.com default;
+    root         /usr/local/var/www/;
+
+    index index.php index.html;
+
+    access_log  /usr/local/etc/nginx/logs/default-ssl.access.log  main;
+
+    ssl                  on;
+    ssl_certificate      ssl/ssl_certificate.cer;
+    ssl_certificate_key  ssl/danieljaouendevelopment.com.key;
+
+    ssl_session_timeout  5m;
+
+    ssl_protocols  SSLv2 SSLv3 TLSv1;
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers   on;
+
+    location / {
+        include /usr/local/etc/nginx/conf.d/php-fpm;
+    }
+
+    location = /info {
+        allow   127.0.0.1;
+        deny    all;
+        rewrite (.*) /.info.php;
+    }
+
+    error_page  404     /404.html;
+    error_page  403     /403.html;
+}

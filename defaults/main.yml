@@ -14,6 +14,10 @@ dotfiles:
     templates:
       - src: usr/local/etc/nginx/nginx.conf.j2
         dest: /usr/local/etc/nginx/nginx.conf
+      - src: usr/local/etc/nginx/sites-available/default.j2
+        dest: /usr/local/etc/nginx/sites-available/default
+      - src: usr/local/etc/nginx/sites-available/default-ssl.j2
+        dest: /usr/local/etc/nginx/sites-available/default-ssl
     # /templates --------------------------------------------------- }}}
 
     # hg ----------------------------------------------------------- {{{
