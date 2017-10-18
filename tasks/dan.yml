@@ -5,6 +5,10 @@
 - name: dan | mkdir -p dotfiles.dan.directories
   file: name={{ item }} state=directory
   with_items: '{{ dotfiles.dan.directories }}'
+
+- name: dan | cp dotfiles.dan.templates
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items: '{{ dotfiles.dan.templates }}'
 # /files ------------------------------------------------------------------ }}}
 
 # repos ------------------------------------------------------------------- {{{

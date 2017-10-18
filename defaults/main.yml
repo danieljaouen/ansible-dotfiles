@@ -7,7 +7,14 @@ dotfiles:
     # directories -------------------------------------------------- {{{
     directories:
       - "{{ dan.home }}/.hgext"
+      - /usr/local/etc/nginx
     # /directories ------------------------------------------------- }}}
+
+    # templates ---------------------------------------------------- {{{
+    templates:
+      - src: usr/local/etc/nginx/nginx.conf.j2
+        dest: /usr/local/etc/nginx/nginx.conf
+    # /templates --------------------------------------------------- }}}
 
     # hg ----------------------------------------------------------- {{{
     hg:
