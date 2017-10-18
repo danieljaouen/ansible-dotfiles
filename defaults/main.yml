@@ -8,6 +8,8 @@ dotfiles:
     directories:
       - "{{ dan.home }}/.hgext"
       - /usr/local/etc/nginx
+      - /usr/local/etc/nginx/sites-available
+      - /usr/local/etc/nginx/sites-enabled
     # /directories ------------------------------------------------- }}}
 
     # templates ---------------------------------------------------- {{{
