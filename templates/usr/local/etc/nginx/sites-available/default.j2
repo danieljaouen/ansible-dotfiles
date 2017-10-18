@@ -1,4 +1,4 @@
 server {
-    server_name www.danieljaouendevelopment.com;
-    return 301 https://danieljaouendevelopment.com$request_uri;
+    server_name www.{{ dotfiles.dan.domain_name }};
+    return 301 https://{{ dotfiles.dan.domain_name }}$request_uri;
 }

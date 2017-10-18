@@ -1,6 +1,6 @@
 server {
     listen       443;
-    server_name  danieljaouendevelopment.com default;
+    server_name  {{ dotfiles.dan.domain_name }} default;
     root         /usr/local/var/www/;
 
     index index.php index.html;
@@ -9,7 +9,7 @@ server {
 
     ssl                  on;
     ssl_certificate      ssl/ssl_certificate.cer;
-    ssl_certificate_key  ssl/danieljaouendevelopment.com.key;
+    ssl_certificate_key  ssl/{{ dotfiles.dan.domain_name }}.key;
 
     ssl_session_timeout  5m;
 
