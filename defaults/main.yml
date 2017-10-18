@@ -25,6 +25,8 @@ dotfiles:
         dest: /usr/local/etc/nginx/sites-available/default
       - src: usr/local/etc/nginx/sites-available/default-ssl.j2
         dest: /usr/local/etc/nginx/sites-available/default-ssl
+      - src: Users/dan/asdf/completions/asdf.fish.j2
+        dest: "{{ dan.home }}/.config/fish/completions/asdf.fish"
     # /templates --------------------------------------------------- }}}
 
     # links -------------------------------------------------------- {{{
