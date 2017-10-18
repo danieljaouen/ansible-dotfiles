@@ -9,6 +9,10 @@
 - name: dan | cp dotfiles.dan.templates
   template: src={{ item.src }} dest={{ item.dest }}
   with_items: '{{ dotfiles.dan.templates }}'
+
+- name: dan | ln -s dotfiles.dan.links
+  file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items: '{{ dotfiles.dan.links }}'
 # /files ------------------------------------------------------------------ }}}
 
 # repos ------------------------------------------------------------------- {{{

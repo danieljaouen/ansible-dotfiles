@@ -22,6 +22,14 @@ dotfiles:
         dest: /usr/local/etc/nginx/sites-available/default-ssl
     # /templates --------------------------------------------------- }}}
 
+    # links -------------------------------------------------------- {{{
+    links:
+      - src: /usr/local/etc/nginx/sites-available/default
+        dest: /usr/local/etc/nginx/sites-enabled/default
+      - src: /usr/local/etc/nginx/sites-available/default-ssl
+        dest: /usr/local/etc/nginx/sites-enabled/default-ssl
+    # /links ------------------------------------------------------- }}}
+
     # hg ----------------------------------------------------------- {{{
     hg:
       repos:
