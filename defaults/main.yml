@@ -15,6 +15,7 @@ dotfiles:
       - /usr/local/etc/nginx/sites-available
       - /usr/local/etc/nginx/sites-enabled
       - "{{ dan.home }}/.config/fish/completions"
+      - /usr/local/var/www
     # /directories ------------------------------------------------- }}}
 
     # templates ---------------------------------------------------- {{{
