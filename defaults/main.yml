@@ -30,6 +30,10 @@ dotfiles:
         dest: "{{ dan.home }}/.config/fish/completions/asdf.fish"
     # /templates --------------------------------------------------- }}}
 
+    # databases ---------------------------------------------------- {{{
+    databases: "{{ databases }}"
+    # /databases --------------------------------------------------- }}}
+
     # links -------------------------------------------------------- {{{
     links:
       - src: /usr/local/etc/nginx/sites-available/default

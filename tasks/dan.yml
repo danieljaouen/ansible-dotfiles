@@ -15,6 +15,12 @@
   with_items: '{{ dotfiles.dan.links }}'
 # /files ------------------------------------------------------------------ }}}
 
+# databases --------------------------------------------------------------- {{{
+- name: dan | createdb database
+  postgresql_db: name={{ item }}
+  with_items: "{{ dotfiles.dan.databases }}"
+# /databases -------------------------------------------------------------- }}}
+
 # repos ------------------------------------------------------------------- {{{
 - name: dan | hg clone dotfiles.dan.hg.repos
   hg: repo={{ item.repo }} dest={{ item.dest }} executable={{ executables.hg }}
