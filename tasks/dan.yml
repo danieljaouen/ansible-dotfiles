@@ -16,8 +16,11 @@
 # /files ------------------------------------------------------------------ }}}
 
 # databases --------------------------------------------------------------- {{{
+- name: dan | creatuser postgres
+  postgresql_user: name=postgres state=present role_attr_flags=SUPERUSER,CREATEDB,REPLICATION,BYPASSRLS
+
 - name: dan | createdb database
-  postgresql_db: name={{ item }}
+  postgresql_db: name={{ item }} state=present
   with_items: "{{ dotfiles.dan.databases }}"
 # /databases -------------------------------------------------------------- }}}
 
