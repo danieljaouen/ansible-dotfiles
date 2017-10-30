@@ -4,15 +4,15 @@
 # files ------------------------------------------------------------------- {{{
 - name: dan | mkdir -p dotfiles.dan.directories
   file: name={{ item }} state=directory
-  with_items: '{{ dotfiles.dan.directories }}'
+  loop: '{{ dotfiles.dan.directories }}'
 
 - name: dan | cp dotfiles.dan.templates
   template: src={{ item.src }} dest={{ item.dest }}
-  with_items: '{{ dotfiles.dan.templates }}'
+  loop: '{{ dotfiles.dan.templates }}'
 
 - name: dan | ln -s dotfiles.dan.links
   file: src={{ item.src }} dest={{ item.dest }} state=link
-  with_items: '{{ dotfiles.dan.links }}'
+  loop: '{{ dotfiles.dan.links }}'
 # /files ------------------------------------------------------------------ }}}
 
 # databases --------------------------------------------------------------- {{{
@@ -21,17 +21,17 @@
 
 - name: dan | createdb database
   postgresql_db: name={{ item }} state=present
-  with_items: "{{ dotfiles.dan.databases }}"
+  loop: "{{ dotfiles.dan.databases }}"
 # /databases -------------------------------------------------------------- }}}
 
 # repos ------------------------------------------------------------------- {{{
 - name: dan | hg clone dotfiles.dan.hg.repos
   hg: repo={{ item.repo }} dest={{ item.dest }} executable={{ executables.hg }}
-  with_items: '{{ dotfiles.dan.hg.repos }}'
+  loop: '{{ dotfiles.dan.hg.repos }}'
 
 - name: dan | git clone dotfiles.dan.git.repos
   git: repo={{ item.repo }} dest={{ item.dest }} accept_hostkey=true
-  with_items: '{{ dotfiles.dan.git.repos }}'
+  loop: '{{ dotfiles.dan.git.repos }}'
 # /repos ------------------------------------------------------------------ }}}
 
 # rbenv ------------------------------------------------------------------- {{{
