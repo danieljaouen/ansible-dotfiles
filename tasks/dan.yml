@@ -2,6 +2,12 @@
 
 ---
 # files ------------------------------------------------------------------- {{{
+- name: dan | sudo mkdir -p dotfiles.dan.sudo_directories
+  file: name={{ item }} state=directory
+  loop: '{{ dotfiles.dan.sudo_directories }}'
+  become: yes
+  become_method: su
+
 - name: dan | mkdir -p dotfiles.dan.directories
   file: name={{ item }} state=directory
   loop: '{{ dotfiles.dan.directories }}'

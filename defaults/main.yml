@@ -8,6 +8,11 @@ dotfiles:
     domain_name: "{{ dan.domain_name }}"
     # /domain name ------------------------------------------------- }}}
 
+    # sudo_directories --------------------------------------------- {{{
+    sudo_directories:
+      - /etc/ansible
+    # /sudo_directores --------------------------------------------- }}}
+
     # directories -------------------------------------------------- {{{
     directories:
       - "{{ dan.home }}/.hgext"
