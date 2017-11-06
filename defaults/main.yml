@@ -29,8 +29,10 @@ dotfiles:
         dest: /usr/local/etc/nginx/nginx.conf
       - src: usr/local/etc/nginx/sites-available/default.j2
         dest: /usr/local/etc/nginx/sites-available/default
-      - src: usr/local/etc/nginx/sites-available/default-ssl.j2
-        dest: /usr/local/etc/nginx/sites-available/default-ssl
+      - src: usr/local/etc/nginx/sites-available/danieljaouendevelopment.com.j2
+        dest: /usr/local/etc/nginx/sites-available/danieljaouendevelopment.com
+      # - src: usr/local/etc/nginx/sites-available/default-ssl.j2
+      # - dest: /usr/local/etc/nginx/sites-available/default-ssl
       - src: Users/dan/asdf/completions/asdf.fish.j2
         dest: "{{ dan.home }}/.config/fish/completions/asdf.fish"
     # /templates --------------------------------------------------- }}}
@@ -43,8 +45,10 @@ dotfiles:
     links:
       - src: /usr/local/etc/nginx/sites-available/default
         dest: /usr/local/etc/nginx/sites-enabled/default
-      - src: /usr/local/etc/nginx/sites-available/default-ssl
-        dest: /usr/local/etc/nginx/sites-enabled/default-ssl
+      # - src: /usr/local/etc/nginx/sites-available/default-ssl
+      # - dest: /usr/local/etc/nginx/sites-enabled/default-ssl
+      - src: /usr/local/etc/nginx/sites-available/danieljaouendevelopment.com
+        dest: /usr/local/etc/nginx/sites-enabled/danieljaouendevelopment.com
     # /links ------------------------------------------------------- }}}
 
     # hg ----------------------------------------------------------- {{{

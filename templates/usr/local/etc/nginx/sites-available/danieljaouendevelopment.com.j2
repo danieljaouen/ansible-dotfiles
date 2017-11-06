@@ -1,0 +1,15 @@
+upstream phoenix_upstream {
+    server 127.0.0.1:4008;
+}
+
+server {
+    listen  443 ssl;
+    server_name {{ dotfiles.dan.domain_name }};
+    ssl_certificate /usr/local/etc/nginx/ssl/ssl_certificate.cer;
+    ssl_certificate_key /usr/local/etc/nginx/ssl/{{ dotfiles.dan.domain_name }}.key;
+    location / {
+        proxy_redirect off;
+        proxy_pass http://phoenix_upstream;
+
+    }
+}
