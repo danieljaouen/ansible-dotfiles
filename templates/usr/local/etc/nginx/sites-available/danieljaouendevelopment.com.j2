@@ -12,4 +12,12 @@ server {
         proxy_pass http://phoenix_upstream;
 
     }
+
+    location /socket/websocket {
+        proxy_pass http://localhost:4008;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 86400;
+    }
 }
