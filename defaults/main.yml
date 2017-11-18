@@ -77,6 +77,9 @@ dotfiles:
         - name: asdf
           repo: "git://github.com/asdf-vm/asdf.git"
           dest: "{{ dan.home }}/.asdf"
+        - name: spacemacs
+          repo: "git://github.com/syl20bnr/spacemacs.git"
+          dest: "{{ dan.home }}/.emacs.d"
         - name: oh-my-zsh
           repo: "git://github.com/robbyrussell/oh-my-zsh.git"
           dest: "{{ dan.home }}/.oh-my-zsh"
