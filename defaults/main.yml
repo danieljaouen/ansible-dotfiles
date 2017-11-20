@@ -29,6 +29,8 @@ dotfiles:
         dest: /usr/local/etc/nginx/nginx.conf
       - src: usr/local/etc/nginx/sites-available/default.j2
         dest: /usr/local/etc/nginx/sites-available/default
+      - src: usr/local/etc/nginx/sites-available/localhost.j2
+        dest: /usr/local/etc/nginx/sites-available/localhost
       - src: usr/local/etc/nginx/sites-available/danieljaouendevelopment.com.j2
         dest: /usr/local/etc/nginx/sites-available/danieljaouendevelopment.com
       # - src: usr/local/etc/nginx/sites-available/default-ssl.j2
