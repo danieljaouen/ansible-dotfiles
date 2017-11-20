@@ -16,9 +16,9 @@
   template: src={{ item.src }} dest={{ item.dest }}
   loop: '{{ dotfiles.dan.templates }}'
 
-- name: dan | ln -s dotfiles.dan.links
-  file: src={{ item.src }} dest={{ item.dest }} state=link
-  loop: '{{ dotfiles.dan.links }}'
+# - name: dan | ln -s dotfiles.dan.links
+#   file: src={{ item.src }} dest={{ item.dest }} state=link
+#   loop: '{{ dotfiles.dan.links }}'
 # /files ------------------------------------------------------------------ }}}
 
 # databases --------------------------------------------------------------- {{{
@@ -46,10 +46,10 @@
 # rbenv ------------------------------------------------------------------- {{{
 # - name: dan | rbenv install dotfiles.dan.ruby.version
 #   shell: "{{ dotfiles.dan.rbenv.commands.rbenv_install_ruby }}"
-# 
+#
 # - name: dan | rbenv global dotfiles.dan.ruby.version
 #   shell: "{{ dotfiles.dan.rbenv.commands.rbenv_global_ruby }}"
-# 
+#
 # - name: dan | gem install bundler
 #   shell: "{{ dotfiles.dan.rbenv.commands.gem_install_bundler }}"
 # /rbenv ------------------------------------------------------------------ }}}
