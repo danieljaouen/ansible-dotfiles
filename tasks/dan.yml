@@ -4,21 +4,21 @@
 # files ------------------------------------------------------------------- {{{
 # - name: dan | sudo mkdir -p dotfiles.dan.sudo_directories
 #   file: name={{ item }} state=directory
-#   loop: '{{ dotfiles.dan.sudo_directories }}'
+#   with_items: '{{ dotfiles.dan.sudo_directories }}'
 #   become: yes
 #   become_method: su
 
 - name: dan | mkdir -p dotfiles.dan.directories
   file: name={{ item }} state=directory
-  loop: '{{ dotfiles.dan.directories }}'
+  with_items: '{{ dotfiles.dan.directories }}'
 
 - name: dan | cp dotfiles.dan.templates
   template: src={{ item.src }} dest={{ item.dest }}
-  loop: '{{ dotfiles.dan.templates }}'
+  with_items: '{{ dotfiles.dan.templates }}'
 
 # - name: dan | ln -s dotfiles.dan.links
 #   file: src={{ item.src }} dest={{ item.dest }} state=link
-#   loop: '{{ dotfiles.dan.links }}'
+#   with_items: '{{ dotfiles.dan.links }}'
 # /files ------------------------------------------------------------------ }}}
 
 # databases --------------------------------------------------------------- {{{
@@ -30,17 +30,17 @@
 
 - name: dan | createdb database 2
   postgresql_db: name={{ item }} state=present
-  loop: "{{ dotfiles.dan.databases }}"
+  with_items: "{{ dotfiles.dan.databases }}"
 # /databases -------------------------------------------------------------- }}}
 
 # repos ------------------------------------------------------------------- {{{
 - name: dan | hg clone dotfiles.dan.hg.repos
   hg: repo={{ item.repo }} dest={{ item.dest }} executable={{ executables.hg }}
-  loop: '{{ dotfiles.dan.hg.repos }}'
+  with_items: '{{ dotfiles.dan.hg.repos }}'
 
 - name: dan | git clone dotfiles.dan.git.repos
   git: repo={{ item.repo }} dest={{ item.dest }} accept_hostkey=true
-  loop: '{{ dotfiles.dan.git.repos }}'
+  with_items: '{{ dotfiles.dan.git.repos }}'
 # /repos ------------------------------------------------------------------ }}}
 
 # rbenv ------------------------------------------------------------------- {{{
