@@ -7,6 +7,17 @@ server {
     server_name {{ dotfiles.dan.domain_name }};
     ssl_certificate /usr/local/etc/nginx/ssl/ssl_certificate.cer;
     ssl_certificate_key /usr/local/etc/nginx/ssl/{{ dotfiles.dan.domain_name }}.key;
+
+    location /js/ {
+        autoindex on;
+        root  /var/www2/prod/rel/daniel_jaouen_development/lib/daniel_jaouen_development-0.1.0/priv/static/js/;
+    }
+
+    location /css/ {
+        autoindex on;
+        root  /var/www2/prod/rel/daniel_jaouen_development/lib/daniel_jaouen_development-0.1.0/priv/static/css/;
+    }
+
     location / {
         proxy_redirect off;
         proxy_pass http://phoenix_upstream;
