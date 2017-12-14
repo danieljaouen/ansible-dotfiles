@@ -1,0 +1,7 @@
+# file: roles/dotfiles/handlers/main.yml
+
+---
+- name: main | sudo brew services restart nginx
+  brew_services: name=nginx state=restarted
+  become: yes
+  become_method: su
