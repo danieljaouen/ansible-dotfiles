@@ -45,12 +45,10 @@ dotfiles:
 
     # links -------------------------------------------------------- {{{
     links:
-      - src: /usr/local/etc/nginx/sites-available/default
-        dest: /usr/local/etc/nginx/sites-enabled/default
-      # - src: /usr/local/etc/nginx/sites-available/default-ssl
-      # - dest: /usr/local/etc/nginx/sites-enabled/default-ssl
-      - src: /usr/local/etc/nginx/sites-available/danieljaouendevelopment.com
-        dest: /usr/local/etc/nginx/sites-enabled/danieljaouendevelopment.com
+      - src: "{{ dan.home }}/.SpaceVim"
+        dest: "{{ dan.home }}/.vim"
+      - src: "{{ dan.home }}/.SpaceVim"
+        dest: "{{ dan.home }}/.config/nvim"
     # /links ------------------------------------------------------- }}}
 
     # hg ----------------------------------------------------------- {{{
@@ -79,6 +77,9 @@ dotfiles:
         - name: asdf
           repo: "git://github.com/asdf-vm/asdf.git"
           dest: "{{ dan.home }}/.asdf"
+        - name: dein.vim
+          repo: "git://github.com/Shougo/dein.vim.git"
+          dest: "{{ dan.home }}/.cache/vimfiles/repos/github.com/Shougo/dein.vim"
         - name: spacevim
           repo: "git://github.com/SpaceVim/SpaceVim.git"
           dest: "{{ dan.home }}/.SpaceVim"
@@ -115,9 +116,9 @@ dotfiles:
         - name: nvm
           repo: "git://github.com/creationix/nvm.git"
           dest: "{{ dan.home }}/.nvm"
-        - name: vundle
-          repo: "git://github.com/gmarik/vundle.git"
-          dest: "{{ dan.home }}/.vim/bundle/vundle"
+        # - name: vundle
+        #   repo: "git://github.com/gmarik/vundle.git"
+        #   dest: "{{ dan.home }}/.vim/bundle/vundle"
         - name: vimpager
           repo: "git://github.com/rkitover/vimpager.git"
           dest: "{{ dan.home }}/vimpager"
