@@ -64,10 +64,10 @@ dotfiles:
           repo: "https://bitbucket.org/astiob/hgshelve"
           dest:  "{{ dan.home }}/.hgext/hgshelve"
         - name: hg-git
-          repo: "http://bitbucket.org/durin42/hg-git"
+          repo: "https://bitbucket.org/durin42/hg-git"
           dest:  "{{ dan.home }}/.hgext/hg-git"
         - name: hgwatchman
-          repo: "http://bitbucket.org/facebook/hgwatchman"
+          repo: "https://bitbucket.org/facebook/hgwatchman"
           dest:  "{{ dan.home }}/.hgext/hgwatchman"
     # /hg ---------------------------------------------------------- }}}
 
@@ -75,55 +75,55 @@ dotfiles:
     git:
       repos:
         - name: asdf
-          repo: "git://github.com/asdf-vm/asdf.git"
+          repo: "https://github.com/asdf-vm/asdf.git"
           dest: "{{ dan.home }}/.asdf"
         - name: dein.vim
-          repo: "git://github.com/Shougo/dein.vim.git"
+          repo: "https://github.com/Shougo/dein.vim.git"
           dest: "{{ dan.home }}/.cache/vimfiles/repos/github.com/Shougo/dein.vim"
         - name: spacevim
-          repo: "git://github.com/SpaceVim/SpaceVim.git"
+          repo: "https://github.com/SpaceVim/SpaceVim.git"
           dest: "{{ dan.home }}/.SpaceVim"
         - name: spacemacs
-          repo: "git://github.com/syl20bnr/spacemacs.git"
+          repo: "https://github.com/syl20bnr/spacemacs.git"
           dest: "{{ dan.home }}/.emacs.d"
         - name: oh-my-zsh
-          repo: "git://github.com/robbyrussell/oh-my-zsh.git"
+          repo: "https://github.com/robbyrussell/oh-my-zsh.git"
           dest: "{{ dan.home }}/.oh-my-zsh"
         - name: oh-my-fish
-          repo: "git://github.com/oh-my-fish/oh-my-fish.git"
+          repo: "https://github.com/oh-my-fish/oh-my-fish.git"
           dest: "{{ dan.home }}/.oh-my-fish"
         - name: fish-theme
-          repo: "git://github.com/danieljaouen/fish-theme.git"
+          repo: "https://github.com/danieljaouen/fish-theme.git"
           dest: "{{ dan.home }}/.oh-my-fish/themes/danieljaouen"
         - name: virtualfish
-          repo: "git://github.com/danieljaouen/virtualfish.git"
+          repo: "https://github.com/danieljaouen/virtualfish.git"
           dest: "{{ dan.home }}/.virtualfish"
         - name: zsh-syntax-highlighting
-          repo: "git://github.com/zsh-users/zsh-syntax-highlighting.git"
+          repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
           dest: "{{ dan.home }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
         - name: tmux-powerline
-          repo: "git://github.com/danieljaouen/tmux-powerline.git"
+          repo: "https://github.com/danieljaouen/tmux-powerline.git"
           dest: "{{ dan.home }}/.tmux/tmux-powerline"
         - name: rbenv
-          repo: "git://github.com/sstephenson/rbenv.git"
+          repo: "https://github.com/sstephenson/rbenv.git"
           dest: "{{ dan.home }}/.rbenv"
         - name: ruby-build
-          repo: "git://github.com/sstephenson/ruby-build.git"
+          repo: "https://github.com/sstephenson/ruby-build.git"
           dest: "{{ dan.home }}/.rbenv/plugins/ruby-build"
         - name: pyenv
-          repo: "git://github.com/yyuu/pyenv.git"
+          repo: "https://github.com/yyuu/pyenv.git"
           dest: "{{ dan.home }}/.pyenv"
         - name: nvm
-          repo: "git://github.com/creationix/nvm.git"
+          repo: "https://github.com/creationix/nvm.git"
           dest: "{{ dan.home }}/.nvm"
         # - name: vundle
-        #   repo: "git://github.com/gmarik/vundle.git"
+        #   repo: "https://github.com/gmarik/vundle.git"
         #   dest: "{{ dan.home }}/.vim/bundle/vundle"
         - name: vimpager
-          repo: "git://github.com/rkitover/vimpager.git"
+          repo: "https://github.com/rkitover/vimpager.git"
           dest: "{{ dan.home }}/vimpager"
         - name: dotfiles
-          repo: "git://github.com/danieljaouen/dotfiles.git"
+          repo: "https://github.com/danieljaouen/dotfiles.git"
           dest: "{{ dan.home }}/.dotfiles"
     # /git --------------------------------------------------------- }}}
 
