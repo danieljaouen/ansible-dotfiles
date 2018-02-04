@@ -16,6 +16,7 @@ dotfiles:
     # directories -------------------------------------------------- {{{
     directories:
       - "{{ dan.home }}/.hgext"
+      - "{{ dan.home }}/src/bundle"
       - /usr/local/etc/nginx
       - /usr/local/etc/nginx/sites-available
       - /usr/local/etc/nginx/sites-enabled
@@ -116,9 +117,9 @@ dotfiles:
         - name: nvm
           repo: "https://github.com/creationix/nvm.git"
           dest: "{{ dan.home }}/.nvm"
-        # - name: vundle
-        #   repo: "https://github.com/gmarik/vundle.git"
-        #   dest: "{{ dan.home }}/.vim/bundle/vundle"
+        - name: vundle
+          repo: "https://github.com/gmarik/vundle.git"
+          dest: "{{ dan.home }}/src/bundle/vundle"
         - name: vimpager
           repo: "https://github.com/rkitover/vimpager.git"
           dest: "{{ dan.home }}/vimpager"
