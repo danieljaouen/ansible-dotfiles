@@ -45,11 +45,11 @@ dotfiles:
     # /databases --------------------------------------------------- }}}
 
     # links -------------------------------------------------------- {{{
-    links:
-      - src: "{{ dan.home }}/.SpaceVim"
-        dest: "{{ dan.home }}/.vim"
-      - src: "{{ dan.home }}/.SpaceVim"
-        dest: "{{ dan.home }}/.config/nvim"
+    # links:
+    #   - src: "{{ dan.home }}/.SpaceVim"
+    #     dest: "{{ dan.home }}/.vim"
+    #   - src: "{{ dan.home }}/.SpaceVim"
+    #     dest: "{{ dan.home }}/.config/nvim"
     # /links ------------------------------------------------------- }}}
 
     # hg ----------------------------------------------------------- {{{
@@ -119,7 +119,7 @@ dotfiles:
           dest: "{{ dan.home }}/.nvm"
         - name: vundle
           repo: "https://github.com/gmarik/vundle.git"
-          dest: "{{ dan.home }}/src/bundle/vundle"
+          dest: "{{ dan.home }}/.vim/bundle/vundle"
         - name: vimpager
           repo: "https://github.com/rkitover/vimpager.git"
           dest: "{{ dan.home }}/vimpager"
