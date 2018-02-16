@@ -123,6 +123,9 @@ dotfiles:
         - name: vimpager
           repo: "https://github.com/rkitover/vimpager.git"
           dest: "{{ dan.home }}/vimpager"
+        - name: alchemist.el
+          repo: "https://github.com/whysoserious/alchemist.el.git"
+          dest: "{{ dan.home }}/src/alchemist.el"
         - name: dotfiles
           repo: "https://github.com/danieljaouen/dotfiles.git"
           dest: "{{ dan.home }}/.dotfiles"
