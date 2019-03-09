@@ -71,6 +71,9 @@ dotfiles:
     # git ---------------------------------------------------------- {{{
     git:
       repos:
+        - name: elixir-ls
+          repo: "https://github.com/elixir-lsp/elixir-ls.git"
+          dest: "{{ dan.home }}/src/elixir-ls"
         - name: intellij-lsp-server
           repo: "https://github.com/Ruin0x11/intellij-lsp-server.git"
           dest: "{{ dan.home }}/src/intellij-lsp-server"
